@@ -1,0 +1,539 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %} Carolina Ink Home Page {% endblock %}
+
+
+{% block content %} 
+    <!-- Custom cursor (desktop only) -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <div class="custom-cursor-dot" id="customCursorDot" aria-hidden="true"></div>
+
+    <!-- =============================== -->
+    <!-- HEADER -->
+    <!-- =============================== -->
+    <header id="siteHeader" class="site-header">
+    <div class="header-inner">
+        <a href="#home" class="wordmark" aria-label="Carolina Ink — Home">
+        <span class="wordmark-main">CAROLINA <span class="wordmark-accent">INK</span></span>
+        <span class="wordmark-sub">LOS · CUSTOM TATTOO ARTIST</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+        <ul>
+            <li><a href="#home" class="nav-link active" data-nav="home">HOME</a></li>
+            <li><a href="#los" class="nav-link" data-nav="los">LOS</a></li>
+            <li><a href="#gallery" class="nav-link" data-nav="gallery">GALLERY</a></li>
+            <li><a href="#pricing" class="nav-link" data-nav="pricing">PRICING</a></li>
+            <li><a href="#booking" class="nav-link" data-nav="booking">BOOKING</a></li>
+            <li><a href="#faq" class="nav-link" data-nav="faq">FAQ</a></li>
+            <li><a href="#contact" class="nav-link" data-nav="contact">CONTACT</a></li>
+        </ul>
+        </nav>
+
+        <a href="#booking" class="btn-gold btn-gold--nav">BOOK NOW <span aria-hidden="true">→</span></a>
+
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+        </button>
+    </div>
+    </header>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <button id="mobileNavClose" class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    <nav aria-label="Mobile Primary">
+        <ul>
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#los" class="mobile-nav-link">Los</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="#pricing" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="#booking" class="mobile-nav-link">Booking</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="#booking" class="btn-gold w-full justify-center mt-6">BOOK NOW →</a>
+    </div>
+    <div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+
+    <main id="home">
+
+    <!-- =============================== -->
+    <!-- HERO -->
+    <!-- =============================== -->
+    <section class="hero" aria-label="Introduction">
+    <div class="hero-grid">
+        <div class="hero-copy">
+        <p class="eyebrow reveal-up" data-reveal-delay="0">PREMIUM TATTOO ARTIST</p>
+        <h1 class="hero-heading">
+            <span class="reveal-up" data-reveal-delay="1">Luxury Ink.</span>
+            <span class="gold-text reveal-up" data-reveal-delay="2">Precision Art.</span>
+        </h1>
+        <p class="hero-paragraph reveal-up" data-reveal-delay="3">
+            Custom tattoos crafted with intention, artistry, and uncompromising precision.
+            Your story. Your piece. Designed by Los.
+        </p>
+        <div class="hero-actions reveal-up" data-reveal-delay="4">
+            <a href="#booking" class="btn-gold">BOOK CONSULTATION <span aria-hidden="true">→</span></a>
+            <a href="#gallery" class="btn-outline">EXPLORE THE WORK <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="scroll-hint reveal-up" data-reveal-delay="5">
+            <span class="scroll-hint-icon" aria-hidden="true"></span>
+            SCROLL TO DISCOVER
+        </div>
+        </div>
+
+        <div class="hero-media">
+        <div class="hero-media-frame">
+            <!-- IMAGE REPLACE: los-hero — cinematic B/W photo of Los tattooing / machine close-up -->
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=1400&auto=format&fit=crop"
+                alt="Close-up of a tattoo machine at work on skin, monochrome"
+                class="los-hero"
+                loading="eager">
+            <div class="hero-media-overlay"></div>
+            <div class="hero-media-vignette"></div>
+            <div class="hero-media-gold-edge"></div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- QUICK ACTION BAR -->
+    <!-- =============================== -->
+    <section class="quick-actions" aria-label="Quick actions">
+    <div class="quick-actions-inner">
+        <a href="#booking" class="qa-card reveal-up">
+        <span class="qa-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+        </span>
+        <span class="qa-text">
+            <span class="qa-title">BOOK APPOINTMENT</span>
+            <span class="qa-desc">Reserve your session.</span>
+        </span>
+        <span class="qa-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#pricing" class="qa-card reveal-up">
+        <span class="qa-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 12.5 12.5 20a1.5 1.5 0 0 1-2.12 0l-6.38-6.38a1.5 1.5 0 0 1 0-2.12L11.5 4H18a2 2 0 0 1 2 2v6.5Z"/><circle cx="15" cy="9" r="1.2"/></svg>
+        </span>
+        <span class="qa-text">
+            <span class="qa-title">GET PRICING INFO</span>
+            <span class="qa-desc">Request a custom estimate.</span>
+        </span>
+        <span class="qa-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#business" class="qa-card reveal-up">
+        <span class="qa-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        </span>
+        <span class="qa-text">
+            <span class="qa-title">BUSINESS HOURS</span>
+            <span class="qa-desc">View studio availability.</span>
+        </span>
+        <span class="qa-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="tel:17045550198" class="qa-card qa-card--last reveal-up">
+        <span class="qa-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4.5 5.1 1.5 1.5 0 0 1 6 3.5Z"/></svg>
+        </span>
+        <span class="qa-text">
+            <span class="qa-title">CALL THE SHOP</span>
+            <span class="qa-desc">Tap to call.</span>
+        </span>
+        <span class="qa-arrow" aria-hidden="true">→</span>
+        </a>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- LOS FEATURE SECTION -->
+    <!-- =============================== -->
+    <section id="los" class="los-section" aria-label="Meet Los">
+    <div class="section-inner los-grid">
+        <div class="los-media reveal-up">
+        <div class="los-media-frame">
+            <!-- IMAGE REPLACE: los-portrait — B/W editorial portrait of Los at work -->
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=1200&auto=format&fit=crop"
+                alt="Portrait of Los, tattoo artist, working in the studio"
+                loading="lazy">
+            <div class="los-media-ornament" aria-hidden="true"></div>
+        </div>
+        </div>
+
+        <div class="los-copy reveal-up">
+        <p class="eyebrow">THE ARTIST</p>
+        <h2 class="section-heading">Meet Los</h2>
+        <p class="los-name">LOS</p>
+        <p class="los-role">CUSTOM TATTOO ARTIST</p>
+        <p class="los-bio">
+            Every piece Los creates begins with a conversation, not a template. He works closely with
+            each client to translate an idea into a composition that respects the body it lives on —
+            weighing scale, placement and line weight with the same discipline a sculptor gives to form.
+            The result is work that reads as intentional from across the room and rewards a closer look.
+        </p>
+        <div class="los-tags">
+            <span class="los-tag">BLACK &amp; GREY</span>
+            <span class="los-tag">CUSTOM DESIGN</span>
+            <span class="los-tag">REALISM</span>
+            <span class="los-tag">LETTERING</span>
+            <span class="los-tag">LARGE SCALE</span>
+        </div>
+        <div class="los-actions">
+            <a href="#contact" class="btn-outline">ABOUT LOS <span aria-hidden="true">→</span></a>
+            <a href="#gallery" class="btn-text">VIEW PORTFOLIO <span aria-hidden="true">→</span></a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- FEATURED WORK / GALLERY -->
+    <!-- =============================== -->
+    <section id="gallery" class="gallery-section" aria-label="Selected work">
+    <div class="section-inner">
+        <div class="section-heading-block reveal-up">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 class="section-heading">Crafted in Ink</h2>
+        </div>
+
+        <div class="gallery-grid">
+        <button type="button" class="gallery-item gi-1 reveal-up" data-caption="Realism — Portrait Study">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=900&auto=format&fit=crop" alt="Realism portrait tattoo, black and grey" loading="lazy" class="tattoo-gallery-01">
+            <span class="gallery-caption"><span class="gc-title">Portrait Study</span><span class="gc-cat">Realism</span></span>
+        </button>
+        <button type="button" class="gallery-item gi-2 reveal-up" data-caption="Black &amp; Grey — Sleeve">
+            <img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?q=80&w=900&auto=format&fit=crop" alt="Black and grey sleeve tattoo detail" loading="lazy" class="tattoo-gallery-02">
+            <span class="gallery-caption"><span class="gc-title">Full Sleeve</span><span class="gc-cat">Black &amp; Grey</span></span>
+        </button>
+        <button type="button" class="gallery-item gi-3 reveal-up" data-caption="Lettering — Script Piece">
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=900&auto=format&fit=crop" alt="Fine line lettering tattoo" loading="lazy" class="tattoo-gallery-03">
+            <span class="gallery-caption"><span class="gc-title">Script Piece</span><span class="gc-cat">Lettering</span></span>
+        </button>
+        <button type="button" class="gallery-item gi-4 reveal-up" data-caption="Floral — Custom Composition">
+            <img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?q=80&w=900&auto=format&fit=crop" alt="Floral custom tattoo composition" loading="lazy" class="tattoo-gallery-04">
+            <span class="gallery-caption"><span class="gc-title">Floral Composition</span><span class="gc-cat">Custom</span></span>
+        </button>
+        <button type="button" class="gallery-item gi-5 reveal-up" data-caption="Detailed Linework — Geometric">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=900&auto=format&fit=crop" alt="Detailed geometric linework tattoo" loading="lazy" class="tattoo-gallery-05">
+            <span class="gallery-caption"><span class="gc-title">Geometric Detail</span><span class="gc-cat">Linework</span></span>
+        </button>
+        <button type="button" class="gallery-item gi-6 reveal-up" data-caption="Realism — Animal Study">
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=900&auto=format&fit=crop" alt="Realism animal tattoo study, black and grey" loading="lazy" class="tattoo-gallery-06">
+            <span class="gallery-caption"><span class="gc-title">Animal Study</span><span class="gc-cat">Realism</span></span>
+        </button>
+        </div>
+
+        <div class="gallery-cta reveal-up">
+        <a href="#contact" class="btn-outline">VIEW FULL GALLERY <span aria-hidden="true">→</span></a>
+        </div>
+    </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close preview">&times;</button>
+    <button id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCaption" class="lightbox-caption"></p>
+    <button id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>
+    </div>
+
+    <!-- =============================== -->
+    <!-- PHILOSOPHY / EXPERIENCE -->
+    <!-- =============================== -->
+    <section class="experience-section" aria-label="The experience">
+    <div class="section-inner">
+        <div class="section-heading-block reveal-up">
+        <p class="eyebrow">THE EXPERIENCE</p>
+        <h2 class="section-heading">Every Piece Is Personal.</h2>
+        </div>
+
+        <div class="experience-steps">
+        <div class="exp-step reveal-up">
+            <span class="exp-num">01</span>
+            <div class="exp-divider" aria-hidden="true"></div>
+            <h3 class="exp-title">CONSULT</h3>
+            <p class="exp-desc">Discuss concept, inspiration, placement and direction.</p>
+        </div>
+        <div class="exp-step reveal-up">
+            <span class="exp-num">02</span>
+            <div class="exp-divider" aria-hidden="true"></div>
+            <h3 class="exp-title">DESIGN</h3>
+            <p class="exp-desc">Los develops a custom composition built around you.</p>
+        </div>
+        <div class="exp-step reveal-up">
+            <span class="exp-num">03</span>
+            <div class="exp-divider" aria-hidden="true"></div>
+            <h3 class="exp-title">REFINE</h3>
+            <p class="exp-desc">Placement, scale and details are finalized together.</p>
+        </div>
+        <div class="exp-step reveal-up">
+            <span class="exp-num">04</span>
+            <div class="exp-divider" aria-hidden="true"></div>
+            <h3 class="exp-title">CREATE</h3>
+            <p class="exp-desc">The tattoo is executed with precision and care.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- PRICING & CONSULTATION -->
+    <!-- =============================== -->
+    <section id="pricing" class="pricing-section" aria-label="Pricing and consultation">
+    <div class="section-inner pricing-grid">
+        <div class="pricing-copy reveal-up">
+        <p class="eyebrow">PRICING &amp; CONSULTATION</p>
+        <h2 class="section-heading">Every Piece Is Unique</h2>
+        <p class="pricing-text">
+            Tattoo pricing depends on size, placement, complexity, detail and session requirements.
+            Submit your concept and Los will review the project before confirming an estimate.
+        </p>
+        <ul class="pricing-checklist">
+            <li><span class="check-icon" aria-hidden="true">✓</span> Personalized consultation</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Custom design &amp; placement guidance</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Transparent project estimate</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> Professional client care</li>
+        </ul>
+        </div>
+        <div class="pricing-cta-block reveal-up">
+        <a href="#contact" class="btn-gold btn-gold--lg">REQUEST AN ESTIMATE <span aria-hidden="true">→</span></a>
+        <p class="pricing-note">Placeholder pricing tiers available on request — final quotes are always project-specific.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- BUSINESS INFORMATION BAR -->
+    <!-- =============================== -->
+    <section id="business" class="business-section" aria-label="Studio information">
+    <div class="business-inner">
+        <div class="biz-card reveal-up">
+        <span class="biz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        </span>
+        <h3 class="biz-title">HOURS</h3>
+        <p class="biz-detail">Mon – Wed 11am – 7pm<br>Thu – Fri 11am – 8pm<br>Sat 10am – 6pm<br>Sun Closed</p>
+        </div>
+        <div class="biz-card reveal-up">
+        <span class="biz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3.5h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 4.5 5.1 1.5 1.5 0 0 1 6 3.5Z"/></svg>
+        </span>
+        <h3 class="biz-title">CALL / TEXT</h3>
+        <p class="biz-detail"><a href="tel:17045550198" class="biz-link">(704) 555-0198</a><br>We're here to help.</p>
+        </div>
+        <div class="biz-card reveal-up">
+        <span class="biz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        </span>
+        <h3 class="biz-title">VISIT</h3>
+        <p class="biz-detail">123 Ink Avenue<br>Charlotte, NC 28202</p>
+        </div>
+        <div class="biz-card reveal-up">
+        <span class="biz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4.5" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+        </span>
+        <h3 class="biz-title">APPOINTMENTS</h3>
+        <p class="biz-detail">Consultation &amp; appointment based booking only.</p>
+        </div>
+        <div class="biz-card reveal-up">
+        <span class="biz-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2.5 3.5 6.5v6c0 5 3.6 8.4 8.5 9.9 4.9-1.5 8.5-4.9 8.5-9.9v-6L12 2.5Z"/></svg>
+        </span>
+        <h3 class="biz-title">24/7 AI RECEPTIONIST</h3>
+        <p class="biz-detail">Questions, pricing inquiries and booking assistance, always on.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- TESTIMONIAL -->
+    <!-- =============================== -->
+    <section class="testimonial-section" aria-label="Client testimonials">
+    <div class="section-inner testimonial-inner">
+        <span class="quote-mark" aria-hidden="true">&#8220;</span>
+        <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide active">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote">Los made the entire experience feel personal from the consultation through the final session. The detail, professionalism and artistry exceeded what I imagined.</p>
+            <p class="testimonial-name">— TAYLOR M.</p>
+        </div>
+        <div class="testimonial-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote">Every step felt considered, from the first sketch to the final line. Los listens, then delivers something better than what I pictured.</p>
+            <p class="testimonial-name">— DEVIN R.</p>
+        </div>
+        <div class="testimonial-slide">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote">The studio itself feels like part of the experience — calm, private, precise. My piece healed beautifully and gets noticed constantly.</p>
+            <p class="testimonial-name">— MORGAN K.</p>
+        </div>
+        </div>
+        <div class="testimonial-controls">
+        <button id="testPrev" class="testimonial-arrow" aria-label="Previous testimonial">&#8249;</button>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+        <button id="testNext" class="testimonial-arrow" aria-label="Next testimonial">&#8250;</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- FAQ -->
+    <!-- =============================== -->
+    <section id="faq" class="faq-section" aria-label="Frequently asked questions">
+    <div class="section-inner">
+        <div class="section-heading-block reveal-up">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-grid">
+        <div class="faq-col">
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                How do I book with Los?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Submit a booking request through the site or call the studio. Los personally reviews every inquiry before confirming a consultation.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                How much will my tattoo cost?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Pricing depends on size, placement, detail and session length. You'll receive a transparent estimate after your consultation.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                Do I need a consultation?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Yes — every custom piece begins with a consultation so Los can understand your concept, placement and goals.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                How should I prepare?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Arrive rested, hydrated and fed, avoid alcohol beforehand, and wear clothing that allows easy access to the tattoo area.</p></div>
+            </div>
+        </div>
+        <div class="faq-col">
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                Can I submit reference images?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Absolutely. References help Los understand your style and vision — you can share them during booking or at your consultation.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                Does Los do cover-ups?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>Yes. Cover-up work is assessed individually during consultation to determine feasibility, design approach and sizing.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                What is the deposit policy?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>A non-refundable deposit secures your appointment and is applied toward the final cost of your tattoo.</p></div>
+            </div>
+            <div class="faq-item reveal-up">
+            <button class="faq-question" aria-expanded="false">
+                How do I care for my new tattoo?
+                <span class="faq-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer"><p>You'll receive detailed aftercare instructions after your session, along with recommended products and a healing timeline.</p></div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- =============================== -->
+    <!-- FINAL CTA -->
+    <!-- =============================== -->
+    <section id="booking" class="final-cta-section" aria-label="Book your session">
+    <div class="final-cta-glow" aria-hidden="true"></div>
+    <div class="section-inner final-cta-inner reveal-up">
+        <h2 class="final-cta-heading">
+        Your Idea.<br><span class="gold-text">Made Permanent.</span>
+        </h2>
+        <p class="final-cta-copy">Start your custom tattoo experience with Los.</p>
+        <a href="#contact" class="btn-gold btn-gold--lg">BOOK YOUR SESSION <span aria-hidden="true">→</span></a>
+    </div>
+    </section>
+
+    </main>
+
+    <!-- =============================== -->
+    <!-- FOOTER -->
+    <!-- =============================== -->
+    <footer id="contact" class="site-footer">
+    <div class="section-inner footer-grid">
+        <div class="footer-col footer-brand">
+        <a href="#home" class="wordmark wordmark--footer">
+            <span class="wordmark-main">CAROLINA <span class="wordmark-accent">INK</span></span>
+        </a>
+        <p class="footer-tagline">ART IS PERSONAL. PRECISION IS EVERYTHING.</p>
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.7"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14.5 21v-7h2.4l.4-3H14.5V9.1c0-.9.3-1.6 1.7-1.6h1.4V4.9c-.2 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6V11H9.5v3H12v7h2.5Z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M15 3.5c.4 2 1.9 3.4 4 3.6v2.6c-1.4 0-2.7-.4-4-1.2v6.2a5.4 5.4 0 1 1-5.4-5.4c.3 0 .6 0 .9.1v2.7a2.7 2.7 0 1 0 1.9 2.6V3.5H15Z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="m10.5 9.5 4.5 2.5-4.5 2.5v-5Z" fill="currentColor" stroke="none"/></svg>
+            </a>
+        </div>
+        </div>
+
+        <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <p class="footer-detail"><a href="tel:17045550198" class="footer-link">(704) 555-0198</a></p>
+        <p class="footer-detail"><a href="mailto:info@carolinaink.com" class="footer-link">info@carolinaink.com</a></p>
+        <p class="footer-detail">123 Ink Avenue, Charlotte, NC 28202</p>
+        </div>
+
+        <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <p class="footer-detail"><a href="#los" class="footer-link">Los</a></p>
+        <p class="footer-detail"><a href="#gallery" class="footer-link">Gallery</a></p>
+        <p class="footer-detail"><a href="#pricing" class="footer-link">Pricing</a></p>
+        <p class="footer-detail"><a href="#booking" class="footer-link">Booking</a></p>
+        <p class="footer-detail"><a href="#faq" class="footer-link">FAQ</a></p>
+        </div>
+
+        <div class="footer-col footer-col--cta">
+        <a href="#booking" class="btn-gold">BOOK YOUR SESSION <span aria-hidden="true">→</span></a>
+        <p class="footer-cta-note">Let's create something timeless.</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Carolina Ink. All Rights Reserved.</p>
+        <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="#">Terms of Service</a>
+        </div>
+    </div>
+    </footer>
+
+    <!-- Sticky mobile CTA -->
+    <a href="#booking" class="mobile-sticky-cta">BOOK WITH LOS</a>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </button>
+
+{% endblock %}
