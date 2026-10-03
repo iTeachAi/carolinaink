@@ -27,7 +27,7 @@ IS_RENDER = os.environ.get("RENDER") == "true"
 if IS_RENDER:
     SECRET_KEY = os.environ["SECRET_KEY"]
 else:
-    SECRET_KEY = os.environ(
+    SECRET_KEY = os.environ.get(
         "SECRET_KEY",
         "django-insecure-6lup=$o6momv2rqx+vi*82!fkjb0a4d0ctov-*j(_zznx1-ahd",
     )
@@ -35,11 +35,23 @@ else:
 DEBUG = not IS_RENDER
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS.extend(
+    host.strip()
+    for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if host.strip()
+)
 
 render_hostname = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 
 if render_hostname:
     ALLOWED_HOSTS.append(render_hostname)
+
+# Render terminates HTTPS before forwarding requests to Django.
+if IS_RENDER:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 
 # Application definition
@@ -56,13 +68,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "shop.urls"
@@ -110,6 +122,8 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": (
             "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if IS_RENDER
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
         ),
     },
 }
@@ -149,9 +163,6 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

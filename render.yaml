@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: carolina-ink
+    runtime: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: python -m gunicorn shop.wsgi:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /app/
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: "2"
